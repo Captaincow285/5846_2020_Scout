@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">5846_2020_scout</string>
+    <string name="action_settings">Settings</string>
+    <string name="initSel1_text">Enter a Match</string>
+    <string name="initSel4_text">How to Use This App</string>
+    <string name="initSel3_text">Download Data to PC</string>
+    <string name="initSel2_text">Set Competition</string>
+    <string name="appTitle">5846 Scouting App System</string>
+    <string name="initButton_text">Go!</string>
+    <string name="SubmitButton">Submit</string>
+    <string name="practiceModeSwitch">Practice Mode</string>
+    <string name="matchNumBox">Match Number</string>
+</resources>
