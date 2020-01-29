@@ -61,7 +61,7 @@ public class MatchActivityDef extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                startActivity(returnToMain);
+                setContentView(R.layout.activity_match_auto);
             }
         });
 
