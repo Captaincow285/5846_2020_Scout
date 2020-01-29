@@ -9,9 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.*;
 
-import static android.widget.Toast.LENGTH_SHORT;
-import static java.security.AccessController.getContext;
-
 public class MainActivity extends AppCompatActivity
 {
 
