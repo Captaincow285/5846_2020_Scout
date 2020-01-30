@@ -18,35 +18,108 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText12"
+        android:id="@+id/lowNumber"
         android:layout_width="83dp"
         android:layout_height="40dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="500dp" />
+        app:layout_constraintTop_toBottomOf="@+id/highOutNumber" />
+
+    <EditText
+        android:id="@+id/highOutNumber"
+        android:layout_width="83dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/highInNumber" />
+
+    <EditText
+        android:id="@+id/highInNumber"
+        android:layout_width="83dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="208dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sectCross" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/lowMinusButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
         android:text="-"
         android:textSize="36sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText12"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintEnd_toStartOf="@+id/lowNumber"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="483dp" />
+        app:layout_constraintTop_toBottomOf="@+id/highOutMinusButton" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/highOutMinusButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="-"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toStartOf="@+id/highOutNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/highInMinusButton" />
+
+    <Button
+        android:id="@+id/highInMinusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="32dp"
+        android:text="-"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toStartOf="@+id/highInNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sectCross" />
+
+    <Button
+        android:id="@+id/highInPlusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="192dp"
         android:text="+"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
-        app:layout_constraintStart_toEndOf="@+id/editText12"
-        tools:layout_editor_absoluteY="483dp" />
+        app:layout_constraintStart_toEndOf="@+id/highInNumber"
+        app:layout_constraintTop_toBottomOf="@+id/sectCross" />
+
+    <Button
+        android:id="@+id/highOutPlusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="+"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/highOutNumber"
+        app:layout_constraintTop_toBottomOf="@+id/highInPlusButton" />
+
+    <Button
+        android:id="@+id/lowPlusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="+"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lowNumber"
+        app:layout_constraintTop_toBottomOf="@+id/highOutPlusButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
