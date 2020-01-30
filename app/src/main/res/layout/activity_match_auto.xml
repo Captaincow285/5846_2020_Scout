@@ -122,4 +122,32 @@
         app:layout_constraintStart_toEndOf="@+id/lowNumber"
         app:layout_constraintTop_toBottomOf="@+id/highOutPlusButton" />
 
+    <TextView
+        android:id="@+id/highInLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cells scored Inner high"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/highInNumber"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="84dp" />
+
+    <TextView
+        android:id="@+id/lowLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cells scored Iow"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="520dp" />
+
+    <TextView
+        android:id="@+id/highOutLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cells scored outer high"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="74dp"
+        tools:layout_editor_absoluteY="436dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
