@@ -2,152 +2,137 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/coordinatorLayout"
+    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <Switch
-        android:id="@+id/sectCross"
-        android:layout_width="354dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="64dp"
-        android:text="Sector Boundry Crossed?"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:layout_editor_absoluteY="2dp">
 
-    <EditText
-        android:id="@+id/lowNumber"
-        android:layout_width="83dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/highOutNumber" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/highOutNumber"
-        android:layout_width="83dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/highInNumber" />
+            <TextView
+                android:id="@+id/highInLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cells scored Inner high"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="84dp"
+                tools:layout_editor_absoluteY="179dp" />
 
-    <EditText
-        android:id="@+id/highInNumber"
-        android:layout_width="83dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="208dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sectCross" />
+            <Button
+                android:id="@+id/highInMinusButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="36sp"
+                tools:layout_editor_absoluteX="22dp"
+                tools:layout_editor_absoluteY="375dp" />
 
-    <Button
-        android:id="@+id/lowMinusButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:text="-"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toStartOf="@+id/lowNumber"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/highOutMinusButton" />
+            <TextView
+                android:id="@+id/lowLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cells scored Iow"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="117dp"
+                tools:layout_editor_absoluteY="519dp" />
 
-    <Button
-        android:id="@+id/highOutMinusButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:text="-"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toStartOf="@+id/highOutNumber"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/highInMinusButton" />
+            <TextView
+                android:id="@+id/highOutLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cells scored outer high"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="74dp"
+                tools:layout_editor_absoluteY="435dp" />
 
-    <Button
-        android:id="@+id/highInMinusButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
-        android:layout_marginEnd="32dp"
-        android:text="-"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toStartOf="@+id/highInNumber"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sectCross" />
+            <Button
+                android:id="@+id/lowMinusButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="36sp"
+                tools:layout_editor_absoluteX="22dp"
+                tools:layout_editor_absoluteY="543dp" />
 
-    <Button
-        android:id="@+id/highInPlusButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="192dp"
-        android:text="+"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/highInNumber"
-        app:layout_constraintTop_toBottomOf="@+id/sectCross" />
+            <Switch
+                android:id="@+id/sectCross"
+                android:layout_width="354dp"
+                android:layout_height="120dp"
+                android:text="Sector Boundry Crossed?"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="29dp"
+                tools:layout_editor_absoluteY="63dp" />
 
-    <Button
-        android:id="@+id/highOutPlusButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="+"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/highOutNumber"
-        app:layout_constraintTop_toBottomOf="@+id/highInPlusButton" />
+            <EditText
+                android:id="@+id/highOutNumber"
+                android:layout_width="83dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:inputType="number"
+                tools:layout_editor_absoluteX="164dp"
+                tools:layout_editor_absoluteY="467dp" />
 
-    <Button
-        android:id="@+id/lowPlusButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="+"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lowNumber"
-        app:layout_constraintTop_toBottomOf="@+id/highOutPlusButton" />
+            <EditText
+                android:id="@+id/highInNumber"
+                android:layout_width="83dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:inputType="number"
+                tools:layout_editor_absoluteX="164dp"
+                tools:layout_editor_absoluteY="391dp" />
 
-    <TextView
-        android:id="@+id/highInLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cells scored Inner high"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/highInNumber"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="84dp" />
+            <EditText
+                android:id="@+id/lowNumber"
+                android:layout_width="83dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:inputType="number"
+                tools:layout_editor_absoluteX="164dp"
+                tools:layout_editor_absoluteY="551dp" />
 
-    <TextView
-        android:id="@+id/lowLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cells scored Iow"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="520dp" />
+            <Button
+                android:id="@+id/highOutMinusButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="36sp"
+                tools:layout_editor_absoluteX="22dp"
+                tools:layout_editor_absoluteY="459dp" />
 
-    <TextView
-        android:id="@+id/highOutLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cells scored outer high"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="436dp" />
+            <Button
+                android:id="@+id/lowPlusButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textSize="36sp"
+                tools:layout_editor_absoluteX="301dp"
+                tools:layout_editor_absoluteY="543dp" />
+
+            <Button
+                android:id="@+id/highInPlusButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textSize="36sp"
+                tools:layout_editor_absoluteX="301dp"
+                tools:layout_editor_absoluteY="375dp" />
+
+            <Button
+                android:id="@+id/highOutPlusButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textSize="36sp"
+                tools:layout_editor_absoluteX="301dp"
+                tools:layout_editor_absoluteY="459dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
