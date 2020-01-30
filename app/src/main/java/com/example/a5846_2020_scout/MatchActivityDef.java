@@ -9,6 +9,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,7 +21,7 @@ public class MatchActivityDef extends AppCompatActivity {
         Log.d("Working", "MatchActivityDef Works!");
         final Intent returnToMain = new Intent(getApplicationContext(), MainActivity.class);
 
-        Switch pracToggle = findViewById(R.id.pracToggle);
+        final Switch pracToggle = findViewById(R.id.pracToggle);
         Button preScoutSubmit = findViewById(R.id.preScoutSubmit);
         Button returnButton = findViewById(R.id.returnButton);
         final TextView matchNumBox = findViewById(R.id.matchNumBox);
@@ -29,6 +30,8 @@ public class MatchActivityDef extends AppCompatActivity {
         final EditText initialsInput = findViewById(R.id.initialsInput);
         final TextView pracModeText = findViewById(R.id.pracModeText);
         final TextView pracModeText2 = findViewById(R.id.pracModeText2);
+
+        final Toast noGo = Toast.makeText(getApplicationContext(), "Fields not filled.", Toast.LENGTH_LONG);
 
         pracModeText.setVisibility(View.GONE);
         pracModeText2.setVisibility(View.GONE);
@@ -61,7 +64,23 @@ public class MatchActivityDef extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                setContentView(R.layout.activity_match_auto);
+                if(pracToggle.isChecked())
+                {
+                    setContentView(R.layout.activity_match_auto);
+                }
+                else
+                {
+                    boolean matchNumFilled = !matchNumInput.getText().toString().isEmpty();
+                    boolean scoutInitFilled = !initialsInput.getText().toString().isEmpty();
+                    if(scoutInitFilled && matchNumFilled)
+                    {
+                        setContentView(R.layout.activity_match_auto);
+                    }
+                    else
+                    {
+                        noGo.show();
+                    }
+                }
             }
         });
 
