@@ -22,7 +22,7 @@ public class MatchActivityDef extends AppCompatActivity {
         final Intent returnToMain = new Intent(getApplicationContext(), MainActivity.class);
 
         final Switch pracToggle = findViewById(R.id.pracToggle);
-        Button preScoutSubmit = findViewById(R.id.preScoutSubmit);
+        Button preScoutSubmit = findViewById(R.id.prematchSubmitButton);
         Button returnButton = findViewById(R.id.returnButton);
         final TextView matchNumBox = findViewById(R.id.matchNumBox);
         final EditText matchNumInput = findViewById(R.id.matchNumberInput);
@@ -30,6 +30,7 @@ public class MatchActivityDef extends AppCompatActivity {
         final EditText initialsInput = findViewById(R.id.initialsInput);
         final TextView pracModeText = findViewById(R.id.pracModeText);
         final TextView pracModeText2 = findViewById(R.id.pracModeText2);
+        //final Button
 
         final Toast noGo = Toast.makeText(getApplicationContext(), "Fields not filled.", Toast.LENGTH_LONG);
 
@@ -70,11 +71,14 @@ public class MatchActivityDef extends AppCompatActivity {
                 }
                 else
                 {
-                    boolean matchNumFilled = matchNumInput.getText().toString().isEmpty();
-                    boolean scoutInitFilled = initialsInput.getText().toString().isEmpty();
+                    boolean matchNumFilled = !matchNumInput.getText().toString().isEmpty();
+                    boolean scoutInitFilled = !initialsInput.getText().toString().isEmpty();
                     if(scoutInitFilled && matchNumFilled)
                     {
+                        String scoutInit = initialsInput.getText().toString();
+                        int matchNumber =Integer.parseInt(matchNumInput.getText().toString());
                         setContentView(R.layout.activity_match_auto);
+
                     }
                     else
                     {
