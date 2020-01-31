@@ -30,7 +30,8 @@ public class MatchActivityDef extends AppCompatActivity {
         final EditText initialsInput = findViewById(R.id.initialsInput);
         final TextView pracModeText = findViewById(R.id.pracModeText);
         final TextView pracModeText2 = findViewById(R.id.pracModeText2);
-        //final Button
+        final TextView teamNumBox = findViewById(R.id.teamNumBox);
+        final EditText teamNumInput = findViewById(R.id.teamNumberInput);
 
         final Toast noGo = Toast.makeText(getApplicationContext(), "Fields not filled.", Toast.LENGTH_LONG);
 
@@ -46,6 +47,8 @@ public class MatchActivityDef extends AppCompatActivity {
                     matchNumInput.setVisibility(View.GONE);
                     scoutInitialsBox.setVisibility(View.GONE);
                     initialsInput.setVisibility(View.GONE);
+                    teamNumBox.setVisibility(View.GONE);
+                    teamNumInput.setVisibility(View.GONE);
                     pracModeText.setVisibility(View.VISIBLE);
                     pracModeText2.setVisibility(View.VISIBLE);
                 }
@@ -55,6 +58,8 @@ public class MatchActivityDef extends AppCompatActivity {
                     matchNumInput.setVisibility(View.VISIBLE);
                     scoutInitialsBox.setVisibility(View.VISIBLE);
                     initialsInput.setVisibility(View.VISIBLE);
+                    teamNumBox.setVisibility(View.VISIBLE);
+                    teamNumInput.setVisibility(View.VISIBLE);
                     pracModeText.setVisibility(View.GONE);
                     pracModeText2.setVisibility(View.GONE);
                 }
@@ -73,10 +78,12 @@ public class MatchActivityDef extends AppCompatActivity {
                 {
                     boolean matchNumFilled = !matchNumInput.getText().toString().isEmpty();
                     boolean scoutInitFilled = !initialsInput.getText().toString().isEmpty();
-                    if(scoutInitFilled && matchNumFilled)
+                    boolean teamNumFilled = !teamNumInput.getText().toString().isEmpty();
+                    if(scoutInitFilled && matchNumFilled && teamNumFilled)
                     {
                         String scoutInit = initialsInput.getText().toString();
-                        int matchNumber =Integer.parseInt(matchNumInput.getText().toString());
+                        int matchNumber = Integer.parseInt(matchNumInput.getText().toString());
+                        int teamNum = Integer.parseInt(teamNumInput.getText().toString());
                         setContentView(R.layout.activity_match_auto);
 
                     }
