@@ -75,6 +75,8 @@ public class MatchActivityDef extends AppCompatActivity {
                     boolean scoutInitFilled = !initialsInput.getText().toString().isEmpty();
                     if(scoutInitFilled && matchNumFilled)
                     {
+                        String scoutInit = initialsInput.getText().toString();
+                        int matchNumber =Integer.parseInt(matchNumInput.getText().toString());
                         setContentView(R.layout.activity_match_auto);
 
                     }
