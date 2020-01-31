@@ -10,4 +10,7 @@
     <string name="SubmitButton">Submit</string>
     <string name="practiceModeSwitch">Practice Mode</string>
     <string name="matchNumBox">Match Number</string>
+    <string name="plusButton">+</string>
+    <string name="minusButton">-</string>
+    <string name="returnButton">Return</string>
 </resources>

@@ -32,12 +32,13 @@
 
             <Button
                 android:id="@+id/highInMinusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginEnd="24dp"
-                android:text="-"
-                android:textSize="36sp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/minusButton"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toStartOf="@+id/highInNumber"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/highInLabel" />
@@ -68,22 +69,25 @@
 
             <Button
                 android:id="@+id/lowMinusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginEnd="24dp"
-                android:text="-"
-                android:textSize="36sp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/minusButton"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toStartOf="@+id/lowNumber"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lowLabel" />
 
             <Switch
                 android:id="@+id/sectCross"
-                android:layout_width="354dp"
-                android:layout_height="120dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:text="Sector Boundry Crossed?"
+                android:layout_marginEnd="32dp"
+                android:text="Initiation Line Crossed?"
                 android:textOff="@android:string/no"
                 android:textOn="@android:string/yes"
                 android:textSize="24sp"
@@ -126,23 +130,25 @@
 
             <Button
                 android:id="@+id/highOutMinusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:layout_marginEnd="24dp"
-                android:text="-"
-                android:textSize="36sp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/minusButton"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toStartOf="@+id/highOutNumber"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/highOutLabel" />
 
             <Button
                 android:id="@+id/lowPlusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
-                android:text="+"
+                android:layout_marginEnd="32dp"
+                android:text="@string/plusButton"
                 android:textSize="36sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/lowNumber"
@@ -150,27 +156,40 @@
 
             <Button
                 android:id="@+id/highInPlusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
-                android:text="+"
-                android:textSize="36sp"
+                android:layout_marginEnd="32dp"
+                android:text="@string/plusButton"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/highInNumber"
                 app:layout_constraintTop_toBottomOf="@+id/highInLabel" />
 
             <Button
                 android:id="@+id/highOutPlusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
-                android:text="+"
-                android:textSize="36sp"
+                android:layout_marginEnd="32dp"
+                android:text="@string/plusButton"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/highOutNumber"
                 app:layout_constraintTop_toBottomOf="@+id/highOutLabel" />
+
+            <Button
+                android:id="@+id/autoSubmitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:text="@string/SubmitButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lowNumber" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
