@@ -84,6 +84,8 @@
                 android:layout_height="120dp"
                 android:layout_marginTop="32dp"
                 android:text="Sector Boundry Crossed?"
+                android:textOff="@android:string/no"
+                android:textOn="@android:string/yes"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
