@@ -34,6 +34,7 @@ public class MatchActivityPre extends AppCompatActivity {
         final EditText teamNumInput = findViewById(R.id.teamNumberInput);
 
         final Toast noGo = Toast.makeText(getApplicationContext(), "Fields not filled.", Toast.LENGTH_LONG);
+        //Intent teleOp = new Intent(getApplicationContext(), );
 
         pracModeText.setVisibility(View.GONE);
         pracModeText2.setVisibility(View.GONE);
@@ -84,7 +85,7 @@ public class MatchActivityPre extends AppCompatActivity {
                         String scoutInit = initialsInput.getText().toString();
                         int matchNumber = Integer.parseInt(matchNumInput.getText().toString());
                         int teamNum = Integer.parseInt(teamNumInput.getText().toString());
-                        setContentView(R.layout.activity_match_auto);
+
 
                     }
                     else
