@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Intent option1 = new Intent(getApplicationContext(), MatchActivityDef.class);
+        final Intent option1 = new Intent(getApplicationContext(), MatchActivityPre.class);
 
         int sel1Id = 10011;
         int sel2Id = 10012;
