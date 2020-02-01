@@ -13,12 +13,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MatchActivityDef extends AppCompatActivity {
+public class MatchActivityPre extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceStat) {
         super.onCreate(savedInstanceStat);
         setContentView(R.layout.activity_match_pre);
-        Log.d("Working", "MatchActivityDef Works!");
+        Log.d("Working", "MatchActivityPre Works!");
         final Intent returnToMain = new Intent(getApplicationContext(), MainActivity.class);
 
         final Switch pracToggle = findViewById(R.id.pracToggle);
