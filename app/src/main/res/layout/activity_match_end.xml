@@ -31,8 +31,8 @@
 
             <Switch
                 android:id="@+id/parkSwitch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="351dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="60dp"
                 android:text="Did the robot park?"
                 android:textSize="36sp"
@@ -72,16 +72,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/generatorImage" />
 
-            <ImageView
-                android:id="@+id/robotParkImmage"
-                android:layout_width="254dp"
-                android:layout_height="152dp"
+            <TextView
+                android:id="@+id/robotClimbLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
+                android:text="Where did the robot start on the bar?"
+                android:textColor="#000000"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.443"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/generatorImage"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:layout_constraintTop_toBottomOf="@+id/parkSwitch" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
