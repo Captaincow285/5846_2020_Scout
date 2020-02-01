@@ -20,20 +20,20 @@
 
             <Button
                 android:id="@+id/lowPlusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="32dp"
                 android:text="@string/plusButton"
-                android:textSize="36sp"
+                android:textSize="24sp"
                 app:layout_constraintStart_toEndOf="@+id/lowNumber"
-                app:layout_constraintTop_toBottomOf="@+id/highOutPlusButton" />
+                app:layout_constraintTop_toBottomOf="@+id/lowLabel" />
 
             <Switch
                 android:id="@+id/controlSpinSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="32dp"
                 android:text="Did they spin it 3 to 5 times?"
                 android:textColor="#000000"
                 android:textSize="24sp"
@@ -45,7 +45,7 @@
                 android:id="@+id/controlPossitionSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="32dp"
                 android:text="Did they select the correct color?"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -54,107 +54,109 @@
 
             <Button
                 android:id="@+id/maxCountMinusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="24dp"
-                android:text="@string/plusButton"
-                android:textSize="36sp"
+                android:text="@string/minusButton"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toStartOf="@+id/maxCountNumber"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/controlPossitionSwitch" />
+                app:layout_constraintTop_toBottomOf="@+id/maxLabel" />
 
             <Button
                 android:id="@+id/maxCountPlusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
                 android:text="@string/plusButton"
-                android:textSize="36sp"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.393"
                 app:layout_constraintStart_toEndOf="@+id/maxCountNumber"
-                app:layout_constraintTop_toBottomOf="@+id/controlPossitionSwitch" />
+                app:layout_constraintTop_toBottomOf="@+id/maxLabel" />
 
             <EditText
                 android:id="@+id/maxCountNumber"
                 android:layout_width="129dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="65dp"
+                android:layout_marginTop="32dp"
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/controlPossitionSwitch" />
+                app:layout_constraintTop_toBottomOf="@+id/maxLabel" />
 
             <EditText
                 android:id="@+id/highInNumber"
                 android:layout_width="129dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="32dp"
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/maxCountNumber" />
+                app:layout_constraintTop_toBottomOf="@+id/highInLabel" />
 
             <EditText
                 android:id="@+id/highOutNumber"
                 android:layout_width="129dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="32dp"
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/highInNumber" />
+                app:layout_constraintTop_toBottomOf="@+id/highOutLabel" />
 
             <EditText
                 android:id="@+id/lowNumber"
                 android:layout_width="129dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="32dp"
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/highOutNumber" />
+                app:layout_constraintTop_toBottomOf="@+id/lowLabel" />
 
             <TextView
                 android:id="@+id/maxLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
                 android:text="Max # of power cells carried."
                 android:textColor="#000000"
                 android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@+id/maxCountNumber"
                 app:layout_constraintEnd_toStartOf="@+id/maxCountPlusButton"
+                app:layout_constraintHorizontal_bias="0.519"
                 app:layout_constraintStart_toEndOf="@+id/maxCountMinusButton"
                 app:layout_constraintTop_toBottomOf="@+id/controlPossitionSwitch" />
 
             <Button
                 android:id="@+id/highInMinusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="53dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="24dp"
                 android:text="@string/minusButton"
                 android:textColor="#030303"
-                android:textSize="36sp"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toStartOf="@+id/highInNumber"
-                app:layout_constraintTop_toBottomOf="@+id/maxCountMinusButton" />
+                app:layout_constraintTop_toBottomOf="@+id/highInLabel" />
 
             <Button
                 android:id="@+id/highInPlusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="32dp"
                 android:text="@string/plusButton"
                 android:textColor="#000000"
-                android:textSize="36sp"
+                android:textSize="24sp"
                 app:layout_constraintStart_toEndOf="@+id/highInNumber"
-                app:layout_constraintTop_toBottomOf="@+id/maxCountPlusButton" />
+                app:layout_constraintTop_toBottomOf="@+id/highInLabel" />
 
             <TextView
                 android:id="@+id/highInLabel"
@@ -173,11 +175,12 @@
                 android:id="@+id/highOutLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="28dp"
                 android:text="Cells Scored, Outer High Goal"
                 android:textColor="#070707"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/highInNumber" />
 
@@ -195,36 +198,36 @@
 
             <Button
                 android:id="@+id/highOutMinusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="24dp"
                 android:text="@string/minusButton"
-                android:textSize="36sp"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toStartOf="@+id/highOutNumber"
-                app:layout_constraintTop_toBottomOf="@+id/highInMinusButton" />
+                app:layout_constraintTop_toBottomOf="@+id/highOutLabel" />
 
             <Button
                 android:id="@+id/highOutPlusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="32dp"
                 android:text="@string/plusButton"
-                android:textSize="36sp"
+                android:textSize="24sp"
                 app:layout_constraintStart_toEndOf="@+id/highOutNumber"
-                app:layout_constraintTop_toBottomOf="@+id/highInPlusButton" />
+                app:layout_constraintTop_toBottomOf="@+id/highOutLabel" />
 
             <Button
                 android:id="@+id/lowMinusButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="32dp"
                 android:layout_marginEnd="24dp"
                 android:text="@string/minusButton"
-                android:textSize="36sp"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toStartOf="@+id/lowNumber"
-                app:layout_constraintTop_toBottomOf="@+id/highOutMinusButton" />
+                app:layout_constraintTop_toBottomOf="@+id/lowLabel" />
 
             <Button
                 android:id="@+id/submitButton"
