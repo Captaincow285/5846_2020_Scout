@@ -1,4 +1,4 @@
-package room_database;
+package roomDatabase;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
@@ -10,6 +10,8 @@ import androidx.room.PrimaryKey;
 public class Match
 {
     @PrimaryKey
+    @ColumnInfo(name = "Team Number")
+    private int teamNumber;
     @ColumnInfo(name = "Match Number")
     private int matchNum;
     @ColumnInfo(name = "Scout Initials")
@@ -47,6 +49,17 @@ public class Match
     public Match()
     {
 
+    }
+
+    @Ignore
+    public int getTeamNumber()
+    {
+        return teamNumber;
+    }
+
+    public void setTeamNumber(int teamNumber)
+    {
+        this.teamNumber = teamNumber;
     }
 
     @Ignore

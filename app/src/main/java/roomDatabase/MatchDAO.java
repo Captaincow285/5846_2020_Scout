@@ -1,4 +1,4 @@
-package room_database;
+package roomDatabase;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

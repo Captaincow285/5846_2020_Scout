@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import roomDatabase.Match;
+
 public class MatchActivityPre extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceStat) {
@@ -85,8 +87,10 @@ public class MatchActivityPre extends AppCompatActivity {
                         String scoutInit = initialsInput.getText().toString();
                         int matchNumber = Integer.parseInt(matchNumInput.getText().toString());
                         int teamNum = Integer.parseInt(teamNumInput.getText().toString());
-
-
+                        Match recording = new Match();
+                        recording.setMatchNum(matchNumber);
+                        recording.setTeamNumber(teamNum);
+                        recording.setScoutInit(scoutInit);
                     }
                     else
                     {
