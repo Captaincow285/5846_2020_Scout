@@ -34,9 +34,10 @@ public class MatchActivityPre extends AppCompatActivity {
         final TextView pracModeText2 = findViewById(R.id.pracModeText2);
         final TextView teamNumBox = findViewById(R.id.teamNumBox);
         final EditText teamNumInput = findViewById(R.id.teamNumberInput);
+        final ConfirmationDialog nextTask = new ConfirmationDialog();
 
         final Toast noGo = Toast.makeText(getApplicationContext(), "Fields not filled.", Toast.LENGTH_LONG);
-        //Intent teleOp = new Intent(getApplicationContext(), );
+        final Intent teleOp = new Intent(getApplicationContext(), MatchActivityTele.class);
 
         pracModeText.setVisibility(View.GONE);
         pracModeText2.setVisibility(View.GONE);
@@ -91,6 +92,7 @@ public class MatchActivityPre extends AppCompatActivity {
                         recording.setMatchNum(matchNumber);
                         recording.setTeamNumber(teamNum);
                         recording.setScoutInit(scoutInit);
+                        startActivity(teleOp);
                     }
                     else
                     {
