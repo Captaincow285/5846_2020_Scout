@@ -1,4 +1,4 @@
-package com.example.a5846_2020_scout;
+package com.example.a5846_2020_scout.common;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
+
+import com.example.a5846_2020_scout.R;
 
 public class MainActivity extends AppCompatActivity
 {

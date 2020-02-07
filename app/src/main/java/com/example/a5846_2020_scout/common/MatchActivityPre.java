@@ -1,4 +1,4 @@
-package com.example.a5846_2020_scout;
+package com.example.a5846_2020_scout.common;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.a5846_2020_scout.R;
+import com.example.a5846_2020_scout.common.ConfirmationDialog;
+import com.example.a5846_2020_scout.common.MainActivity;
+import com.example.a5846_2020_scout.match.MatchActivityAuto;
+import com.example.a5846_2020_scout.match.MatchActivityTele;
 
 import roomDatabase.Match;
 
@@ -37,7 +43,7 @@ public class MatchActivityPre extends AppCompatActivity {
         final ConfirmationDialog nextTask = new ConfirmationDialog();
 
         final Toast noGo = Toast.makeText(getApplicationContext(), "Fields not filled.", Toast.LENGTH_LONG);
-        final Intent teleOp = new Intent(getApplicationContext(), MatchActivityTele.class);
+        final Intent teleOp = new Intent(getApplicationContext(), MatchActivityAuto.class);
 
         pracModeText.setVisibility(View.GONE);
         pracModeText2.setVisibility(View.GONE);

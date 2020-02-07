@@ -1,4 +1,4 @@
-package com.example.a5846_2020_scout;
+package com.example.a5846_2020_scout.common;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -6,6 +6,8 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.DialogFragment;
+
+import com.example.a5846_2020_scout.BooleanPasser;
 
 public class ConfirmationDialog extends DialogFragment
 {
