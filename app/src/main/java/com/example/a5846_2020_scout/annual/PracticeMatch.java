@@ -1,22 +1,25 @@
 package com.example.a5846_2020_scout.annual;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class PracticeMatch
 {
-    private int preloadCount;
-    private boolean crossedSector;
-    private int autoLowGoal;
-    private int autoHighOuterGoal;
-    private int autoHighInnerGoal;
+    int preloadCount;
+    boolean crossedSector;
+    int autoLowGoal;
+    int autoHighOuterGoal;
+    int autoHighInnerGoal;
 
-    private boolean controlPanelEnabled;
-    private boolean controlPanelActivated;
-    private int teleLowGoal;
-    private int teleHighOuterGoal;
-    private int teleHighInnerGoal;
+    boolean controlPanelEnabled;
+    boolean controlPanelActivated;
+    int teleLowGoal;
+    int teleHighOuterGoal;
+    int teleHighInnerGoal;
 
-    private boolean endPark;
-    private boolean endClimb;
-    private int hangPosition;
+    boolean endPark;
+    boolean endClimb;
+    int hangPosition;
 
     public PracticeMatch(){}
 

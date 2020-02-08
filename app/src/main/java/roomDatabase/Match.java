@@ -6,45 +6,48 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import org.parceler.Parcel;
+
+@Parcel
 @Entity(tableName = "Match")
 public class Match
 {
     @PrimaryKey
     @ColumnInfo(name = "Team Number")
-    private int teamNumber;
+    int teamNumber;
     @ColumnInfo(name = "Match Number")
-    private int matchNum;
+    int matchNum;
     @ColumnInfo(name = "Scout Initials")
-    private String scoutInit;
+    String scoutInit;
 
     @ColumnInfo(name = "Preloaded Cells")
-    private int preloadCount;
+    int preloadCount;
     @ColumnInfo(name = "Sector Boundary Crossed")
-    private boolean crossedSector;
+    boolean crossedSector;
     @ColumnInfo(name = "Cells Scored, Low Goal, Autonomous")
-    private int autoLowGoal;
+    int autoLowGoal;
     @ColumnInfo(name = "Cells Scored, High Outer Goal, Autonomous")
-    private int autoHighOuterGoal;
+    int autoHighOuterGoal;
     @ColumnInfo(name = "Cells Scored, High Outer Goal, Autonomous")
-    private int autoHighInnerGoal;
+    int autoHighInnerGoal;
 
     @ColumnInfo(name = "Control Panel Enabled")
-    private boolean controlPanelEnabled;
+    boolean controlPanelEnabled;
     @ColumnInfo(name = "Control Panel Activated")
-    private boolean controlPanelActivated;
+    boolean controlPanelActivated;
     @ColumnInfo(name = "Cells Scored, Low Goal, TeleOp")
-    private int teleLowGoal;
+    int teleLowGoal;
     @ColumnInfo(name = "Cells Scored, High Outer Goal, TeleOp")
-    private int teleHighOuterGoal;
+    int teleHighOuterGoal;
     @ColumnInfo(name = "Cells Scored, High Inner Goal, TeleOp")
-    private int teleHighInnerGoal;
+    int teleHighInnerGoal;
 
     @ColumnInfo(name = "Endgame Park")
-    private boolean endPark;
+    boolean endPark;
     @ColumnInfo(name = "Endgame Climb")
-    private boolean endClimb;
+    boolean endClimb;
     @ColumnInfo(name = "Hang Position")
-    private int hangPosition;
+    int hangPosition;
 
     public Match()
     {

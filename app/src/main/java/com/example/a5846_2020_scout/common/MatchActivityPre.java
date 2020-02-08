@@ -2,6 +2,7 @@ package com.example.a5846_2020_scout.common;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
@@ -16,9 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.a5846_2020_scout.R;
 import com.example.a5846_2020_scout.annual.MatchActivityAuto;
-import com.example.a5846_2020_scout.annual.PracticeMatch;
 
-import java.io.Serializable;
+
+import org.parceler.Parcels;
 
 import roomDatabase.Match;
 
@@ -100,11 +101,12 @@ public class MatchActivityPre extends AppCompatActivity {
                         String scoutInit = initialsInput.getText().toString();
                         int matchNumber = Integer.parseInt(matchNumInput.getText().toString());
                         int teamNum = Integer.parseInt(teamNumInput.getText().toString());
+
                         Match recording = new Match();
                         recording.setMatchNum(matchNumber);
                         recording.setTeamNumber(teamNum);
                         recording.setScoutInit(scoutInit);
-                        auto.putExtra("Database", (Parcelable) recording);
+                        auto.putExtra("Match", Parcels.wrap(recording));
                         auto.putExtra("Practice Mode", practiceMode);
                         startActivity(auto);
                     }

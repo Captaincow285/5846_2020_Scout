@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.a5846_2020_scout.R;
 
+import org.parceler.Parcels;
+
 public class MatchActivityTele extends AppCompatActivity
 {
     private int highIn = 0;
@@ -37,7 +39,7 @@ public class MatchActivityTele extends AppCompatActivity
         Button lowMinusButton = findViewById(R.id.lowMinusButton);
         Button maxCountPlusButton = findViewById(R.id.maxCountPlusButton);
         Button maxCountMinusButton = findViewById(R.id.maxCountMinusButton);
-        final Button confirmationButton = findViewById(R.id.confirmationButtonAuto);
+        final Button confirmationButton = findViewById(R.id.confirmationButtonTeleop);
         final Switch controlSpinSwitch = findViewById(R.id.controlSpinSwitch);
         final Switch controlPositionSwitch = findViewById(R.id.controlPositionSwitch);
 
@@ -142,7 +144,7 @@ public class MatchActivityTele extends AppCompatActivity
             public void onClick(View v) {
                 if(practiceMode)
                 {
-                    PracticeMatch practice = (PracticeMatch) getIntent().getSerializableExtra("Practice Object");
+                    PracticeMatch practice = Parcels.unwrap(getIntent().getParcelableExtra("Practice Object"));
                     practice.setControlPanelEnabled(controlSpinSwitch.isChecked());
                     practice.setControlPanelActivated(controlPositionSwitch.isChecked());
                 }

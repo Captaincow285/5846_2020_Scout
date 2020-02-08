@@ -1,6 +1,0 @@
-Base Database: Matches
-Function: Store match data
-
-1st Level Databases:
-Teams: Store matches by one team together
-Competition: Store matches at one competition together
