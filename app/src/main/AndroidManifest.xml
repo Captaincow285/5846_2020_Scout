@@ -19,6 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".common.MatchActivityPre" android:noHistory="true"/>
+        <activity android:name=".annual.MatchActivityAuto" android:noHistory="true"/>
+        <activity android:name=".annual.MatchActivityTele" android:noHistory="true"/>
 
     </application>
 

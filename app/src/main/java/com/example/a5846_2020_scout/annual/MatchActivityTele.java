@@ -48,15 +48,16 @@ public class MatchActivityTele extends AppCompatActivity
         final TextView lowNumber = findViewById(R.id.lowNumber);
         final TextView maxCountNumber = findViewById(R.id.maxCountNumber);
 
-        highInNumber.setText(highIn);
-        highOutNumber.setText(highOut);
-        lowNumber.setText(low);
-        maxCountNumber.setText(cellCount);
+        highInNumber.setText(Integer.toString(highIn));
+        highOutNumber.setText(Integer.toString(highOut));
+        lowNumber.setText(Integer.toString(low));
+        maxCountNumber.setText(Integer.toString(cellCount));
 
         maxCountPlusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 cellCount++;
+                maxCountNumber.setText(Integer.toString(cellCount));
             }
         });
 
@@ -66,6 +67,7 @@ public class MatchActivityTele extends AppCompatActivity
                 if(cellCount != 0)
                 {
                     cellCount--;
+                    maxCountNumber.setText(Integer.toString(cellCount));
                 }
             }
         });
@@ -74,7 +76,7 @@ public class MatchActivityTele extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 highIn++;
-                highInNumber.setText(highIn);
+                highInNumber.setText(Integer.toString(highIn));
             }
         });
 
@@ -84,7 +86,7 @@ public class MatchActivityTele extends AppCompatActivity
                 if(highIn != 0)
                 {
                     highIn--;
-                    highInNumber.setText(highIn);
+                    highInNumber.setText(Integer.toString(highIn));
                 }
             }
         });
@@ -93,7 +95,7 @@ public class MatchActivityTele extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 highOut ++;
-                highOutNumber.setText(highOut);
+                highOutNumber.setText(Integer.toString(highOut));
             }
         });
 
@@ -103,7 +105,7 @@ public class MatchActivityTele extends AppCompatActivity
                 if(highOut != 0)
                 {
                     highOut--;
-                    highOutNumber.setText(highOut);
+                    highOutNumber.setText(Integer.toString(highOut));
                 }
             }
         });
@@ -112,7 +114,7 @@ public class MatchActivityTele extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 low++;
-                lowNumber.setText(low);
+                lowNumber.setText(Integer.toString(low));
             }
         });
 
@@ -122,7 +124,7 @@ public class MatchActivityTele extends AppCompatActivity
                 if(low != 0)
                 {
                     low--;
-                    lowNumber.setText(low);
+                    lowNumber.setText(Integer.toString(low));
                 }
             }
         });

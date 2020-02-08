@@ -45,15 +45,15 @@ public class MatchActivityAuto extends AppCompatActivity
         final TextView highOutNumber = findViewById(R.id.highOutNumber);
         final TextView lowNumber = findViewById(R.id.lowNumber);
 
-        highInNumber.setText(highIn);
-        highOutNumber.setText(highOut);
-        lowNumber.setText(low);
+        highInNumber.setText(Integer.toString(highIn));
+        highOutNumber.setText(Integer.toString(highOut));
+        lowNumber.setText(Integer.toString(low));
 
         highInPlusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 highIn++;
-                highInNumber.setText(highIn);
+                highInNumber.setText(Integer.toString(highIn));
             }
         });
 
@@ -63,7 +63,7 @@ public class MatchActivityAuto extends AppCompatActivity
                 if(highIn != 0)
                 {
                     highIn--;
-                    highInNumber.setText(highIn);
+                    highInNumber.setText(Integer.toString(highIn));
                 }
             }
         });
@@ -72,7 +72,7 @@ public class MatchActivityAuto extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 highOut ++;
-                highOutNumber.setText(highOut);
+                highOutNumber.setText(Integer.toString(highOut));
             }
         });
 
@@ -82,7 +82,7 @@ public class MatchActivityAuto extends AppCompatActivity
                 if(highOut != 0)
                 {
                     highOut--;
-                    highOutNumber.setText(highOut);
+                    highOutNumber.setText(Integer.toString(highOut));
                 }
             }
         });
@@ -91,7 +91,7 @@ public class MatchActivityAuto extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 low++;
-                lowNumber.setText(low);
+                lowNumber.setText(Integer.toString(low));
             }
         });
 
@@ -101,7 +101,7 @@ public class MatchActivityAuto extends AppCompatActivity
                 if(low != 0)
                 {
                     low--;
-                    lowNumber.setText(low);
+                    lowNumber.setText(Integer.toString(low));
                 }
             }
         });
