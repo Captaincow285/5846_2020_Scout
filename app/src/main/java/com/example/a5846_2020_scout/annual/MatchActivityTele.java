@@ -1,4 +1,4 @@
-package com.example.a5846_2020_scout.match;
+package com.example.a5846_2020_scout.annual;
 
 import android.os.Bundle;
 import android.util.Log;

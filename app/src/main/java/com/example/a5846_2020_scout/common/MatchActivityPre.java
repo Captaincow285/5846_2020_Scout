@@ -2,6 +2,7 @@ package com.example.a5846_2020_scout.common;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -14,10 +15,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.a5846_2020_scout.R;
-import com.example.a5846_2020_scout.common.ConfirmationDialog;
-import com.example.a5846_2020_scout.common.MainActivity;
-import com.example.a5846_2020_scout.match.MatchActivityAuto;
-import com.example.a5846_2020_scout.match.MatchActivityTele;
+import com.example.a5846_2020_scout.annual.MatchActivityAuto;
+import com.example.a5846_2020_scout.annual.PracticeMatch;
+
+import java.io.Serializable;
 
 import roomDatabase.Match;
 
@@ -32,6 +33,8 @@ public class MatchActivityPre extends AppCompatActivity {
         final Switch pracToggle = findViewById(R.id.pracToggle);
         Button preScoutSubmit = findViewById(R.id.prematchSubmitButton);
         Button returnButton = findViewById(R.id.returnButton);
+        //Button confirmationSubmit = findViewById(R.id)
+
         final TextView matchNumBox = findViewById(R.id.matchNumBox);
         final EditText matchNumInput = findViewById(R.id.matchNumberInput);
         final TextView scoutInitialsBox = findViewById(R.id.scoutInitialsBox);
@@ -47,6 +50,7 @@ public class MatchActivityPre extends AppCompatActivity {
 
         pracModeText.setVisibility(View.GONE);
         pracModeText2.setVisibility(View.GONE);
+
 
         pracToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -80,9 +84,11 @@ public class MatchActivityPre extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                if(pracToggle.isChecked())
+                boolean practiceMode = pracToggle.isChecked();
+                if(practiceMode)
                 {
-                    setContentView(R.layout.activity_match_auto);
+                    teleOp.putExtra("Practice Mode", (Serializable) practiceMode);
+                    startActivity(teleOp);
                 }
                 else
                 {
@@ -98,6 +104,8 @@ public class MatchActivityPre extends AppCompatActivity {
                         recording.setMatchNum(matchNumber);
                         recording.setTeamNumber(teamNum);
                         recording.setScoutInit(scoutInit);
+                        teleOp.putExtra("Database", (Serializable) recording);
+                        teleOp.putExtra("Practice Mode", (Serializable) practiceMode);
                         startActivity(teleOp);
                     }
                     else
