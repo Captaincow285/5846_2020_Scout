@@ -46,7 +46,7 @@ public class MatchActivityPre extends AppCompatActivity {
         final ConfirmationDialog nextTask = new ConfirmationDialog();
 
         final Toast noGo = Toast.makeText(getApplicationContext(), "Fields not filled.", Toast.LENGTH_LONG);
-        final Intent teleOp = new Intent(getApplicationContext(), MatchActivityAuto.class);
+        final Intent auto = new Intent(getApplicationContext(), MatchActivityAuto.class);
 
         pracModeText.setVisibility(View.GONE);
         pracModeText2.setVisibility(View.GONE);
@@ -87,8 +87,8 @@ public class MatchActivityPre extends AppCompatActivity {
                 boolean practiceMode = pracToggle.isChecked();
                 if(practiceMode)
                 {
-                    teleOp.putExtra("Practice Mode", (Serializable) practiceMode);
-                    startActivity(teleOp);
+                    auto.putExtra("Practice Mode", (Serializable) practiceMode);
+                    startActivity(auto);
                 }
                 else
                 {
@@ -104,9 +104,9 @@ public class MatchActivityPre extends AppCompatActivity {
                         recording.setMatchNum(matchNumber);
                         recording.setTeamNumber(teamNum);
                         recording.setScoutInit(scoutInit);
-                        teleOp.putExtra("Database", (Serializable) recording);
-                        teleOp.putExtra("Practice Mode", (Serializable) practiceMode);
-                        startActivity(teleOp);
+                        auto.putExtra("Database", (Serializable) recording);
+                        auto.putExtra("Practice Mode", (Serializable) practiceMode);
+                        startActivity(auto);
                     }
                     else
                     {

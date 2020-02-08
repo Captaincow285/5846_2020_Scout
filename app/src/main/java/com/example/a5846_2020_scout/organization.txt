@@ -1,4 +1,0 @@
-Keep for future iterations:
-Main.java
-SetCompActivity.java
-
