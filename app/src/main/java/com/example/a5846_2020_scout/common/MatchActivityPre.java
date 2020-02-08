@@ -87,7 +87,7 @@ public class MatchActivityPre extends AppCompatActivity {
                 boolean practiceMode = pracToggle.isChecked();
                 if(practiceMode)
                 {
-                    auto.putExtra("Practice Mode", (Serializable) practiceMode);
+                    auto.putExtra("Practice Mode", practiceMode);
                     startActivity(auto);
                 }
                 else
@@ -104,8 +104,8 @@ public class MatchActivityPre extends AppCompatActivity {
                         recording.setMatchNum(matchNumber);
                         recording.setTeamNumber(teamNum);
                         recording.setScoutInit(scoutInit);
-                        auto.putExtra("Database", (Serializable) recording);
-                        auto.putExtra("Practice Mode", (Serializable) practiceMode);
+                        auto.putExtra("Database", (Parcelable) recording);
+                        auto.putExtra("Practice Mode", practiceMode);
                         startActivity(auto);
                     }
                     else

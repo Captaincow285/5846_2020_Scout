@@ -2,6 +2,7 @@ package com.example.a5846_2020_scout.annual;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
@@ -26,7 +27,7 @@ public class MatchActivityAuto extends AppCompatActivity
         super.onCreate(saveInstanceStat);
         setContentView(R.layout.activity_match_auto);
 
-        final boolean practiceMode = (boolean) getIntent().getSerializableExtra("Practice Mode");
+        final boolean practiceMode = getIntent().getBooleanExtra("Practice Mode", true);
         final Intent teleop = new Intent(getApplicationContext(), MatchActivityTele.class);
 
         final Switch sectCross = findViewById(R.id.sectCross);
@@ -124,18 +125,19 @@ public class MatchActivityAuto extends AppCompatActivity
                     practice.setAutoHighInnerGoal(highIn);
                     practice.setAutoHighOuterGoal(highOut);
                     practice.setAutoLowGoal(low);
-                    teleop.putExtra("Practice Object", (Serializable) practice);
+                    teleop.putExtra("Practice Object", (Parcelable) practice);
+                    teleop.putExtra("Practice Mode", practiceMode);
                     startActivity(teleop);
                 }
                 else
                 {
-                    Match recording = (Match) getIntent().getSerializableExtra("Database");
+                    Match recording = (Match) getIntent().getParcelableExtra("");
                     recording.setCrossedSector(sectCross.isChecked());
                     recording.setAutoHighInnerGoal(highIn);
                     recording.setAutoHighOuterGoal(highOut);
                     recording.setAutoLowGoal(low);
-                    teleop.putExtra("Database", (Serializable) recording);
-                    teleop.putExtra("Practice Mode", (Serializable) practiceMode);
+                    teleop.putExtra("Database", (Parcelable) recording);
+                    teleop.putExtra("Practice Mode", practiceMode);
                     startActivity(teleop);
                 }
             }

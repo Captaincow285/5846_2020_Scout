@@ -25,7 +25,7 @@ public class MatchActivityTele extends AppCompatActivity
         setContentView(R.layout.activity_match_teleop);
         Log.d("Working","MatchActivityTele works!");
 
-        final boolean practiceMode = (boolean) getIntent().getSerializableExtra("Practice Mode");
+        final boolean practiceMode = getIntent().getBooleanExtra("Practice Mode", true);
         final Intent end = new Intent(getApplicationContext(), MatchActivityEnd.class);
 
         final Button autoSubmitButton = findViewById(R.id.SubmitButton);
