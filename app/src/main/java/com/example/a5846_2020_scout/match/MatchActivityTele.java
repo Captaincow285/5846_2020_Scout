@@ -17,7 +17,7 @@ public class MatchActivityTele extends AppCompatActivity
         setContentView(R.layout.activity_match_teleop);
         Log.d("Working","MatchActivityTele works!");
 
-        Button submitButton = findViewById(R.id.teleopSubmitButton);
+        Button submitButton = findViewById(R.id.SubmitButton);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override

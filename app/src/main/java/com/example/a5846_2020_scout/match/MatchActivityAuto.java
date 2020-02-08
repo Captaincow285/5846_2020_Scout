@@ -15,7 +15,7 @@ public class MatchActivityAuto extends AppCompatActivity
         super.onCreate(saveInstanceStat);
         setContentView(R.layout.activity_match_auto);
 
-        Button autoSubmitButton = findViewById(R.id.autoSubmitButton);
+        Button autoSubmitButton = findViewById(R.id.SubmitButton);
 
         autoSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
