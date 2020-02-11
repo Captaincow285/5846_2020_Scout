@@ -1,9 +1,7 @@
-package com.example.a5846_2020_scout.annual;
+package com.example.a5846_2020_scout.annual.gui_func;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.a5846_2020_scout.R;
+import com.example.a5846_2020_scout.annual.PracticeMatch;
 
 import org.parceler.Parcels;
 
@@ -40,9 +39,6 @@ public class MatchActivityAuto extends AppCompatActivity
         Button highOutMinusButton = findViewById(R.id.highOutMinusButton);
         Button lowPlusButton = findViewById(R.id.lowPlusButton);
         Button lowMinusButton = findViewById(R.id.lowMinusButton);
-        final Button confirmationButton = findViewById(R.id.confirmationButtonAuto);
-
-        confirmationButton.setVisibility(View.GONE);
 
         final TextView highInNumber = findViewById(R.id.highInNumber);
         final TextView highOutNumber = findViewById(R.id.highOutNumber);
@@ -112,14 +108,6 @@ public class MatchActivityAuto extends AppCompatActivity
         autoSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                confirmationButton.setVisibility(View.VISIBLE);
-                autoSubmitButton.setVisibility(View.GONE);
-            }
-        });
-
-        confirmationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 if(practiceMode)
                 {
                     PracticeMatch practice = new PracticeMatch();
@@ -133,14 +121,14 @@ public class MatchActivityAuto extends AppCompatActivity
                 }
                 else
                 {
-                    Match recording = Parcels.unwrap(getIntent().getParcelableExtra("Match"));
+                    Match recording = Parcels.unwrap(getIntent().getParcelableExtra("MatchFromPre"));
                     Log.d("Test","Test");
                     Log.d("Test", recording.getScoutInit());
                     recording.setCrossedSector(sectCross.isChecked());
                     recording.setAutoHighInnerGoal(highIn);
                     recording.setAutoHighOuterGoal(highOut);
                     recording.setAutoLowGoal(low);
-                    teleop.putExtra("Database", Parcels.wrap(recording));
+                    teleop.putExtra("MatchFromAuto", Parcels.wrap(recording));
                     teleop.putExtra("Practice Mode", practiceMode);
                     startActivity(teleop);
                 }

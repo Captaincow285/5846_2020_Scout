@@ -35,6 +35,8 @@ public class Match
     boolean controlPanelEnabled;
     @ColumnInfo(name = "Control Panel Activated")
     boolean controlPanelActivated;
+    @ColumnInfo(name = "Maximum Cells Carried")
+    int maxCellsCarried;
     @ColumnInfo(name = "Cells Scored, Low Goal, TeleOp")
     int teleLowGoal;
     @ColumnInfo(name = "Cells Scored, High Outer Goal, TeleOp")
@@ -144,6 +146,16 @@ public class Match
 
     public void setControlPanelActivated(boolean controlPanelActivated) {
         this.controlPanelActivated = controlPanelActivated;
+    }
+
+    @Ignore
+    public int getMaxCellsCarried() {
+        return maxCellsCarried;
+    }
+
+    @Ignore
+    public void setMaxCellsCarried(int maxCellsCarried) {
+        this.maxCellsCarried = maxCellsCarried;
     }
 
     @Ignore

@@ -1,4 +1,4 @@
-package com.example.a5846_2020_scout.annual;
+package com.example.a5846_2020_scout.annual.gui_func;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.a5846_2020_scout.R;
+import com.example.a5846_2020_scout.annual.PracticeMatch;
 
 import org.parceler.Parcels;
+
+import roomDatabase.Match;
 
 public class MatchActivityTele extends AppCompatActivity
 {
@@ -30,7 +33,7 @@ public class MatchActivityTele extends AppCompatActivity
         final boolean practiceMode = getIntent().getBooleanExtra("Practice Mode", true);
         final Intent end = new Intent(getApplicationContext(), MatchActivityEnd.class);
 
-        final Button autoSubmitButton = findViewById(R.id.SubmitButton);
+        final Button submitButton = findViewById(R.id.SubmitButton);
         Button highInPlusButton = findViewById(R.id.highInPlusButton);
         Button highInMinusButton = findViewById(R.id.highInMinusButton);
         Button highOutPlusButton = findViewById(R.id.highOutPlusButton);
@@ -39,11 +42,8 @@ public class MatchActivityTele extends AppCompatActivity
         Button lowMinusButton = findViewById(R.id.lowMinusButton);
         Button maxCountPlusButton = findViewById(R.id.maxCountPlusButton);
         Button maxCountMinusButton = findViewById(R.id.maxCountMinusButton);
-        final Button confirmationButton = findViewById(R.id.confirmationButtonTeleop);
         final Switch controlSpinSwitch = findViewById(R.id.controlSpinSwitch);
         final Switch controlPositionSwitch = findViewById(R.id.controlPositionSwitch);
-
-        confirmationButton.setVisibility(View.GONE);
 
         final TextView highInNumber = findViewById(R.id.highInNumber);
         final TextView highOutNumber = findViewById(R.id.highOutNumber);
@@ -131,15 +131,7 @@ public class MatchActivityTele extends AppCompatActivity
             }
         });
 
-        autoSubmitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                confirmationButton.setVisibility(View.VISIBLE);
-                autoSubmitButton.setVisibility(View.GONE);
-            }
-        });
-
-        confirmationButton.setOnClickListener(new View.OnClickListener() {
+        submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(practiceMode)
@@ -147,10 +139,25 @@ public class MatchActivityTele extends AppCompatActivity
                     PracticeMatch practice = Parcels.unwrap(getIntent().getParcelableExtra("Practice Object"));
                     practice.setControlPanelEnabled(controlSpinSwitch.isChecked());
                     practice.setControlPanelActivated(controlPositionSwitch.isChecked());
+                    practice.setTeleHighInnerGoal(highIn);
+                    practice.setTeleHighOuterGoal(highOut);
+                    practice.setTeleLowGoal(low);
+                    end.putExtra("Practice Object", Parcels.wrap(practice));
+                    end.putExtra("Practice Mode", practiceMode);
+                    startActivity(end);
                 }
                 else
                 {
-
+                    Match recording = Parcels.unwrap(getIntent().getParcelableExtra("MatchFromAuto"));
+                    recording.setControlPanelEnabled(controlSpinSwitch.isChecked());
+                    recording.setControlPanelActivated(controlPositionSwitch.isChecked());
+                    recording.setMaxCellsCarried(cellCount);
+                    recording.setTeleHighInnerGoal(highIn);
+                    recording.setTeleHighOuterGoal(highOut);
+                    recording.setTeleLowGoal(low);
+                    end.putExtra("MatchFromTele", Parcels.wrap(recording));
+                    end.putExtra("Practice Mode", practiceMode);
+                    startActivity(end);
                 }
             }
         });
