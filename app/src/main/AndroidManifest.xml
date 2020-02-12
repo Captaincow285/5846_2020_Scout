@@ -21,6 +21,9 @@
         <activity android:name=".common.MatchActivityPre" android:noHistory="true"/>
         <activity android:name=".annual.gui_func.MatchActivityAuto" android:noHistory="true"/>
         <activity android:name=".annual.gui_func.MatchActivityTele" android:noHistory="true"/>
+        <activity android:name=".annual.gui_func.MatchActivityEnd" android:noHistory="true"/>
+        <activity android:name=".annual.gui_func.MatchActivityPracScore" android:noHistory="true"/>
+        <activity android:name=".annual.gui_func.MatchActivityReview" android:noHistory="true"/>
 
     </application>
 

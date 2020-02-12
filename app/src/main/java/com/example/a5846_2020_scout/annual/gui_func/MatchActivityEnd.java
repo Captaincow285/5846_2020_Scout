@@ -26,8 +26,8 @@ public class MatchActivityEnd extends AppCompatActivity
         setContentView(R.layout.activity_match_end);
 
         final boolean practiceMode = getIntent().getBooleanExtra("Practice Mode", true);
-        final Intent pracReview = new Intent();
-        final Intent review = new Intent();
+        final Intent pracReview = new Intent(getApplicationContext(), MatchActivityPracScore.class);
+        final Intent review = new Intent(getApplicationContext(), MatchActivityReview.class);
 
         final Switch climbSwitch = findViewById(R.id.climbSwitch);
         final Switch parkSwitch = findViewById(R.id.parkSwitch);

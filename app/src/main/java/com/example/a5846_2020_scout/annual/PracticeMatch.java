@@ -20,6 +20,7 @@ public class PracticeMatch
     boolean endPark;
     boolean endClimb;
     int hangPosition;
+    boolean balanced;
 
     public PracticeMatch(){}
 
@@ -75,7 +76,11 @@ public class PracticeMatch
         this.hangPosition = hangPosition;
     }
 
-    public int score()
+    public void setBalanced(boolean balanced) {
+        this.balanced = balanced;
+    }
+
+    public int autoScore()
     {
         int score = 0;
         if(crossedSector)
@@ -85,7 +90,77 @@ public class PracticeMatch
         score += autoLowGoal * 2;
         score += autoHighOuterGoal * 4;
         score += autoHighInnerGoal * 6;
+        return score;
+    }
 
+    public int teleScore()
+    {
+        int score = 0;
+        score += teleHighInnerGoal * 3;
+        score += teleHighOuterGoal * 2;
+        score += teleLowGoal;
+        if(controlPanelEnabled)
+        {
+            score += 10;
+        }
+        if(controlPanelActivated)
+        {
+            score += 20;
+        }
+        return score;
+    }
+
+    public int endScore()
+    {
+        int score = 0;
+        if(endPark)
+        {
+            score += 5;
+        }
+        if(endClimb)
+        {
+            score += 25;
+        }
+        if(balanced)
+        {
+            score += 15;
+        }
+        return score;
+    }
+
+    public int totalScore()
+    {
+        int score = 0;
+        if(crossedSector)
+        {
+            score += 5;
+        }
+        score += autoLowGoal * 2;
+        score += autoHighOuterGoal * 4;
+        score += autoHighInnerGoal * 6;
+        score += teleHighInnerGoal * 3;
+        score += teleHighOuterGoal * 2;
+        score += teleLowGoal;
+        if(controlPanelEnabled)
+        {
+            score += 10;
+        }
+        if(controlPanelActivated)
+        {
+            score += 20;
+        }
+        if(endPark)
+        {
+            score += 5;
+        }
+        if(endClimb)
+        {
+            score += 25;
+        }
+        if(balanced)
+        {
+            score += 15;
+        }
 
         return score;
     }

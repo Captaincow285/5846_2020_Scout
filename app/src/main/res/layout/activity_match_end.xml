@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteX="-139dp"
+        tools:layout_editor_absoluteY="-81dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="112dp"
-                android:text="Did the robot climb?"
+                android:text="Climbed?"
                 android:textSize="36sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -31,10 +31,10 @@
 
             <Switch
                 android:id="@+id/parkSwitch"
-                android:layout_width="351dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="60dp"
-                android:text="Did the robot park?"
+                android:text="Parked?"
                 android:textSize="36sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -56,13 +56,13 @@
                 android:id="@+id/robotClimbLable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:text="Where did the robot start on the bar?"
+                android:layout_marginTop="32dp"
+                android:text="Robot Position?"
                 android:textColor="#000000"
-                android:textSize="24sp"
+                android:textSize="36sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/parkSwitch" />
+                app:layout_constraintTop_toBottomOf="@+id/balancedSwitch" />
 
             <SeekBar
                 android:id="@+id/robotHangPosition"
@@ -72,6 +72,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/robotClimbLable" />
+
+            <Switch
+                android:id="@+id/balancedSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Switch Level?"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/parkSwitch" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

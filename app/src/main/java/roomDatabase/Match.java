@@ -50,6 +50,8 @@ public class Match
     boolean endClimb;
     @ColumnInfo(name = "Hang Position")
     int hangPosition;
+    @ColumnInfo(name = "Balanced?")
+    boolean balanced;
 
     public Match()
     {
@@ -181,10 +183,12 @@ public class Match
         return teleHighInnerGoal;
     }
 
+    @Ignore
     public void setTeleHighInnerGoal(int teleHighInnerGoal) {
         this.teleHighInnerGoal = teleHighInnerGoal;
     }
 
+    @Ignore
     public boolean isEndPark() {
         return endPark;
     }
@@ -193,6 +197,7 @@ public class Match
         this.endPark = endPark;
     }
 
+    @Ignore
     public boolean isEndClimb() {
         return endClimb;
     }
@@ -201,11 +206,110 @@ public class Match
         this.endClimb = endClimb;
     }
 
+    @Ignore
     public int getHangPosition() {
         return hangPosition;
     }
 
     public void setHangPosition(int hangPosition) {
         this.hangPosition = hangPosition;
+    }
+
+    public void setBalanced(boolean balanced) {
+        this.balanced = balanced;
+    }
+
+    @Ignore
+    public boolean isBalanced() {
+        return balanced;
+    }
+
+    @Ignore
+    public int autoScore()
+    {
+        int score = 0;
+        if(crossedSector)
+        {
+            score += 5;
+        }
+        score += autoLowGoal * 2;
+        score += autoHighOuterGoal * 4;
+        score += autoHighInnerGoal * 6;
+        return score;
+    }
+
+    @Ignore
+    public int teleScore()
+    {
+        int score = 0;
+        score += teleHighInnerGoal * 3;
+        score += teleHighOuterGoal * 2;
+        score += teleLowGoal;
+        if(controlPanelEnabled)
+        {
+            score += 10;
+        }
+        if(controlPanelActivated)
+        {
+            score += 20;
+        }
+        return score;
+    }
+
+    @Ignore
+    public int endScore()
+    {
+        int score = 0;
+        if(endPark)
+        {
+            score += 5;
+        }
+        if(endClimb)
+        {
+            score += 25;
+        }
+        if(balanced)
+        {
+            score += 15;
+        }
+        return score;
+    }
+
+    @Ignore
+    public int totalScore()
+    {
+        int score = 0;
+        if(crossedSector)
+        {
+            score += 5;
+        }
+        score += autoLowGoal * 2;
+        score += autoHighOuterGoal * 4;
+        score += autoHighInnerGoal * 6;
+        score += teleHighInnerGoal * 3;
+        score += teleHighOuterGoal * 2;
+        score += teleLowGoal;
+        if(controlPanelEnabled)
+        {
+            score += 10;
+        }
+        if(controlPanelActivated)
+        {
+            score += 20;
+        }
+        if(endPark)
+        {
+            score += 5;
+        }
+        if(endClimb)
+        {
+            score += 25;
+        }
+        if(balanced)
+        {
+            score += 15;
+        }
+
+        return score;
     }
 }
