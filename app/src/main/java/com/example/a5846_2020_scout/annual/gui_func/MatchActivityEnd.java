@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
 
@@ -33,6 +34,30 @@ public class MatchActivityEnd extends AppCompatActivity
         final Switch parkSwitch = findViewById(R.id.parkSwitch);
         final SeekBar robotHangPosition = findViewById(R.id.robotHangPosition);
         Button submitButton = findViewById(R.id.SubmitButton);
+
+        /*
+        climbSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(parkSwitch.isChecked())
+                {
+                    parkSwitch.setChecked(false);
+                    climbSwitch.setChecked(true);
+                }
+            }
+        });
+
+        parkSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(climbSwitch.isChecked())
+                {
+                    climbSwitch.setChecked(false);
+                    parkSwitch.setChecked(true);
+                }
+            }
+        });
+         */
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
