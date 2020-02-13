@@ -1,4 +1,4 @@
-package roomDatabase;
+package com.example.a5846_2020_scout.roomDatabase;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
