@@ -15,7 +15,7 @@ import com.example.a5846_2020_scout.annual.PracticeMatch;
 
 import org.parceler.Parcels;
 
-import roomDatabase.Match;
+import com.example.a5846_2020_scout.roomDatabase.Match;
 
 public class MatchActivityTele extends AppCompatActivity
 {
