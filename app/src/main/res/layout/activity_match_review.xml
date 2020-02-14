@@ -335,6 +335,55 @@
                 app:layout_constraintTop_toBottomOf="@+id/robotClimbLable"
                 app:srcCompat="@drawable/balanceswitch" />
 
+            <TextView
+                android:id="@+id/frbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Final Review"
+                app:layout_constraintTop_toBottomOf="@+id/robotHangPosition"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="#000000"
+                android:textSize="36sp"
+                tools:layout_editor_absoluteX="18dp" />
+
+            <TextView
+                android:id="@+id/totalPts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Auto Points"
+                app:layout_constraintTop_toBottomOf="@+id/frbox"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="18dp" />
+
+            <TextView
+                android:id="@+id/PtsOutput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/totalPts"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="18dp" />
+
+            <Button
+                android:id="@+id/SubmitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Submit "
+                android:textColor="#0A0A0A"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/PtsOutput" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
