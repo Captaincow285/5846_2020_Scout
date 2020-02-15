@@ -30,7 +30,7 @@ public class Match
     int autoLowGoal;
     @ColumnInfo(name = "Cells Scored, High Outer Goal, Autonomous")
     int autoHighOuterGoal;
-    @ColumnInfo(name = "Cells Scored, High Outer Goal, Autonomous")
+    @ColumnInfo(name = "Cells Scored, High Inner Goal, Autonomous")
     int autoHighInnerGoal;
 
     @ColumnInfo(name = "Control Panel Enabled")
