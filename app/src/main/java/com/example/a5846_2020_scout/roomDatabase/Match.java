@@ -12,6 +12,8 @@ import org.parceler.Parcel;
 @Entity(tableName = "Match")
 public class Match
 {
+    @ColumnInfo(name = "Competition")
+    String competition;
     @PrimaryKey
     @ColumnInfo(name = "Team Number")
     int teamNumber;
@@ -56,6 +58,15 @@ public class Match
     public Match()
     {
 
+    }
+
+    @Ignore
+    public String getCompetition() {
+        return competition;
+    }
+
+    public void setCompetition(String competition) {
+        this.competition = competition;
     }
 
     @Ignore

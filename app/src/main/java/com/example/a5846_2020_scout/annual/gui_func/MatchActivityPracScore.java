@@ -37,7 +37,8 @@ public class MatchActivityPracScore extends AppCompatActivity
 
         menuSelect.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 startActivity(returnToMain);
             }
         });

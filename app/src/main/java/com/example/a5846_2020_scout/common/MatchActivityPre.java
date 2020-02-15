@@ -101,6 +101,7 @@ public class MatchActivityPre extends AppCompatActivity {
                         int teamNum = Integer.parseInt(teamNumInput.getText().toString());
 
                         Match recording = new Match();
+                        //recording.setCompetition();           //ADD LATER
                         recording.setMatchNum(matchNumber);
                         recording.setTeamNumber(teamNum);
                         recording.setScoutInit(scoutInit);

@@ -18,13 +18,13 @@ import android.content.Intent;
 
 import org.parceler.Parcels;
 
-public class MatchActivityReview extends AppCompatActivity
+public class MatchActivityReview extends AppCompatActivity implements MatchDAO
 {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_pracscore);
-        Match recording = Parcels.unwrap(getIntent().getParcelableExtra("MatchFromEnd"));
+        final Match recording = Parcels.unwrap(getIntent().getParcelableExtra("MatchFromEnd"));
         final Intent returnToMain = new Intent(getApplicationContext(), MainActivity.class);
 
         Button menuSelect = findViewById(R.id.menuButton);
@@ -40,10 +40,26 @@ public class MatchActivityReview extends AppCompatActivity
 
         menuSelect.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View v)
+            {
+                insert(recording);
                 startActivity(returnToMain);
             }
         });
+    }
+
+    @Override
+    public void insert(Match... Match) {
+
+    }
+
+    @Override
+    public void update(Match... Match) {
+
+    }
+
+    @Override
+    public void delete(Match Match) {
+
     }
 }

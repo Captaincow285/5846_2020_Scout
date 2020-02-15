@@ -24,6 +24,7 @@
         <activity android:name=".annual.gui_func.MatchActivityEnd" android:noHistory="true"/>
         <activity android:name=".annual.gui_func.MatchActivityPracScore" android:noHistory="true"/>
         <activity android:name=".annual.gui_func.MatchActivityReview" android:noHistory="true"/>
+        <activity android:name=".common.ExportActivity" android:noHistory="true"/>
 
     </application>
 
