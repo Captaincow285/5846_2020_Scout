@@ -89,7 +89,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                android:text="Initiation Line Crossed?"
+                android:text="@string/Line_Crossed"
                 android:textOff="@android:string/no"
                 android:textOn="@android:string/yes"
                 android:textSize="24sp"

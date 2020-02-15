@@ -13,4 +13,11 @@
     <string name="plusButton">+</string>
     <string name="minusButton">-</string>
     <string name="returnButton">Return</string>
+    <string name="low_Score">Cells Scored, Low Goal</string>
+    <string name="Out_High_score">Cells Scored, Outer High Goal</string>
+    <string name="Out_In_Goal">Cells Scored, Inner High Goal</string>
+    <string name="Max_cells">Max # of power cells carried.</string>
+    <string name="Ctrl_Activate">Control Panel Activated?</string>
+    <string name="Ctrl_Enabled">Control Panel Enabled?</string>
+    <string name="Line_Crossed">Initiation Line Crossed?</string>
 </resources>
