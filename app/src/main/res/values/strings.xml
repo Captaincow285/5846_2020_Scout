@@ -20,4 +20,8 @@
     <string name="Ctrl_Activate">Control Panel Activated?</string>
     <string name="Ctrl_Enabled">Control Panel Enabled?</string>
     <string name="Line_Crossed">Initiation Line Crossed?</string>
+    <string name="Lv_Switch">Switch Level?</string>
+    <string name="RB_Position">Robot Position?</string>
+    <string name="park">Parked?</string>
+    <string name="climb">Climbed?</string>
 </resources>
