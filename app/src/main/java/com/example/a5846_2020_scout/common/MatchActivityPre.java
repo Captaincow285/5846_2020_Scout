@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +30,7 @@ public class MatchActivityPre extends AppCompatActivity {
         setContentView(R.layout.activity_match_pre);
         Log.d("Working", "MatchActivityPre Works!");
         final Intent returnToMain = new Intent(getApplicationContext(), MainActivity.class);
+        final Intent auto = new Intent(getApplicationContext(), MatchActivityAuto.class);
 
         final Switch pracToggle = findViewById(R.id.pracToggle);
         Button preScoutSubmit = findViewById(R.id.prematchSubmitButton);
@@ -45,7 +48,13 @@ public class MatchActivityPre extends AppCompatActivity {
         final ConfirmationDialog nextTask = new ConfirmationDialog();
 
         final Toast noGo = Toast.makeText(getApplicationContext(), "Fields not filled.", Toast.LENGTH_LONG);
-        final Intent auto = new Intent(getApplicationContext(), MatchActivityAuto.class);
+
+        /*
+        String[] competitions = {"SEMass", "WPI", "NEDCMP", "Worlds", "Battlecry", "Beantown Blitz"};
+        final Spinner compSet = findViewById(R.id.comp_list);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.activity_match_pre, R.id.competitionBox, competitions);
+        compSet.setAdapter(adapter);
+         */
 
         pracModeText.setVisibility(View.GONE);
         pracModeText2.setVisibility(View.GONE);
@@ -94,25 +103,16 @@ public class MatchActivityPre extends AppCompatActivity {
                     boolean matchNumFilled = !matchNumInput.getText().toString().isEmpty();
                     boolean scoutInitFilled = !initialsInput.getText().toString().isEmpty();
                     boolean teamNumFilled = !teamNumInput.getText().toString().isEmpty();
-                    boolean compSet;
-                    if(getIntent().getParcelableExtra("compSet") != null)
-                    {
-                        compSet = true;
-                    }
-                    else
-                    {
-                        compSet = false;
-                    }
 
-                    if(scoutInitFilled && matchNumFilled && teamNumFilled && compSet)
+                    if(scoutInitFilled && matchNumFilled && teamNumFilled)
                     {
-                        String comp = getIntent().getParcelableExtra("compName");
+                        //String comp = compSet.getSelectedItem().toString();
                         String scoutInit = initialsInput.getText().toString();
                         int matchNumber = Integer.parseInt(matchNumInput.getText().toString());
                         int teamNum = Integer.parseInt(teamNumInput.getText().toString());
 
                         Match recording = new Match();
-                        recording.setCompetition(comp);
+                        //recording.setCompetition(comp);
                         recording.setMatchNum(matchNumber);
                         recording.setTeamNumber(teamNum);
                         recording.setScoutInit(scoutInit);
