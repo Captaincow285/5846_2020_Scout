@@ -29,42 +29,42 @@
                     android:id="@+id/compSEM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="South East MASS"
+                    android:text="@string/south_east_mass"
                     android:textSize="24sp" />
 
                 <RadioButton
                     android:id="@+id/compWPI"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Compitition at WPI"
+                    android:text="@string/compitition_at_wpi"
                     android:textSize="24sp" />
 
                 <RadioButton
                     android:id="@+id/compNEDCMP"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="NE Districs"
+                    android:text="@string/ne_districs"
                     android:textSize="24sp" />
 
                 <RadioButton
                     android:id="@+id/compWorlds"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Worlds"
+                    android:text="@string/worlds"
                     android:textSize="24sp" />
 
                 <RadioButton
                     android:id="@+id/compBattle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Battlecry"
+                    android:text="@string/battle"
                     android:textSize="24sp" />
 
                 <RadioButton
                     android:id="@+id/compBean"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BeanTown"
+                    android:text="@string/bean"
                     android:textSize="24sp" />
             </RadioGroup>
 
@@ -73,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Chose the curent Comp"
+                android:text="@string/chose_the_current_comp"
                 android:textColor="#000000"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Submit "
+                android:text="@string/SubmitButton"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

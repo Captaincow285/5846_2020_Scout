@@ -234,7 +234,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Submit "
+                android:text="@string/SubmitButton"
                 android:textColor="#0A0A0A"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
