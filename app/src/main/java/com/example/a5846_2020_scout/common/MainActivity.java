@@ -10,6 +10,8 @@ import android.widget.*;
 
 import com.example.a5846_2020_scout.R;
 
+import org.parceler.Parcels;
+
 public class MainActivity extends AppCompatActivity
 {
 
@@ -25,15 +27,12 @@ public class MainActivity extends AppCompatActivity
         int sel1Id = 10011;
         int sel2Id = 10012;
         int sel3Id = 10013;
-        int sel4Id = 10014;
         RadioButton initSel1 = findViewById(R.id.initSel1);
         initSel1.setId(sel1Id);
         RadioButton initSel2 = findViewById(R.id.initSel2);
         initSel2.setId(sel2Id);
         RadioButton initSel3 = findViewById(R.id.initSel3);
         initSel3.setId(sel3Id);
-        RadioButton initSel4 = findViewById(R.id.initSel4);
-        initSel4.setId(sel4Id);
 
         Button firstExec = findViewById(R.id.initExecButton);
         firstExec.setOnClickListener(new View.OnClickListener()
@@ -48,21 +47,20 @@ public class MainActivity extends AppCompatActivity
                     Log.d("Working", "Filled RadioButton");
                     if(radioSelect == 10011)
                     {
-                        option1.putExtra("compSet", getIntent().getParcelableExtra("compSet"));
+                        String comp = Parcels.unwrap(getIntent().getParcelableExtra("compSet"));
+                        option1.putExtra("compSet", Parcels.wrap(comp));
                         option1.putExtra("compName", getIntent().getParcelableExtra("compName"));
                         startActivity(option1);
                     }
+                    /*
                     else if(radioSelect == 10012)
                     {
                         startActivity(option2);
                     }
+                     */
                     else if(radioSelect == 10013)
                     {
                         Log.d("Unimplemented","Download Data to PC Selected");
-                    }
-                    else if(radioSelect == 10014)
-                    {
-                        Log.d("Unimplemented","How to Use This App Selected");
                     }
                 }
             }

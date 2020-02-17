@@ -25,7 +25,7 @@
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/initialsInput" />
+                app:layout_constraintTop_toBottomOf="@+id/comp_list" />
 
             <Switch
                 android:id="@+id/pracToggle"
@@ -144,12 +144,23 @@
 
             <Spinner
                 android:id="@+id/comp_list"
-                android:layout_width="401dp"
-                android:layout_height="17dp"
-                android:entries="6"
-                app:layout_constraintBottom_toTopOf="@+id/prematchSubmitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/initialsInput" />
+
+            <TextView
+                android:id="@+id/competitionBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Competition"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toStartOf="@+id/comp_list"
                 app:layout_constraintTop_toBottomOf="@+id/initialsInput" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
