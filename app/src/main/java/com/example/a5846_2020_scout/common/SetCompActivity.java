@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.a5846_2020_scout.R;
 
+import org.parceler.Parcels;
+
 public class SetCompActivity extends AppCompatActivity
 {
     private String comp;
@@ -73,7 +75,7 @@ public class SetCompActivity extends AppCompatActivity
                 {
                     comp = "Beantown Blitz";
                 }
-                returnToMain.putExtra("compName", comp);
+                returnToMain.putExtra("compName", Parcels.wrap(comp));
                 returnToMain.putExtra("compSet", true);
                 startActivity(returnToMain);
             }
