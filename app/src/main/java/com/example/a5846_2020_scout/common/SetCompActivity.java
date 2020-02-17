@@ -74,6 +74,7 @@ public class SetCompActivity extends AppCompatActivity
                     comp = "Beantown Blitz";
                 }
                 returnToMain.putExtra("compName", comp);
+                returnToMain.putExtra("compSet", true);
                 startActivity(returnToMain);
             }
         });

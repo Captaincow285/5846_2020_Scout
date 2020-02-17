@@ -94,14 +94,25 @@ public class MatchActivityPre extends AppCompatActivity {
                     boolean matchNumFilled = !matchNumInput.getText().toString().isEmpty();
                     boolean scoutInitFilled = !initialsInput.getText().toString().isEmpty();
                     boolean teamNumFilled = !teamNumInput.getText().toString().isEmpty();
-                    if(scoutInitFilled && matchNumFilled && teamNumFilled)
+                    boolean compSet;
+                    if(getIntent().getParcelableExtra("compSet") != null)
                     {
+                        compSet = true;
+                    }
+                    else
+                    {
+                        compSet = false;
+                    }
+
+                    if(scoutInitFilled && matchNumFilled && teamNumFilled && compSet)
+                    {
+                        String comp = getIntent().getParcelableExtra("compName");
                         String scoutInit = initialsInput.getText().toString();
                         int matchNumber = Integer.parseInt(matchNumInput.getText().toString());
                         int teamNum = Integer.parseInt(teamNumInput.getText().toString());
 
                         Match recording = new Match();
-                        //recording.setCompetition();           //ADD LATER
+                        recording.setCompetition(comp);
                         recording.setMatchNum(matchNumber);
                         recording.setTeamNumber(teamNum);
                         recording.setScoutInit(scoutInit);

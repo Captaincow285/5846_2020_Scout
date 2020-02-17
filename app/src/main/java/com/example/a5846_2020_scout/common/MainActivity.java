@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         final Intent option1 = new Intent(getApplicationContext(), MatchActivityPre.class);
+        final Intent option2 = new Intent(getApplicationContext(), SetCompActivity.class);
 
         int sel1Id = 10011;
         int sel2Id = 10012;
@@ -47,11 +48,13 @@ public class MainActivity extends AppCompatActivity
                     Log.d("Working", "Filled RadioButton");
                     if(radioSelect == 10011)
                     {
+                        option1.putExtra("compSet", getIntent().getParcelableExtra("compSet"));
+                        option1.putExtra("compName", getIntent().getParcelableExtra("compName"));
                         startActivity(option1);
                     }
                     else if(radioSelect == 10012)
                     {
-                        Log.d("Unimplemented", "Set Competition Selected");
+                        startActivity(option2);
                     }
                     else if(radioSelect == 10013)
                     {
