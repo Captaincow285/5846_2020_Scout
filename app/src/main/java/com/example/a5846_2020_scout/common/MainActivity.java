@@ -22,13 +22,14 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         final Intent option1 = new Intent(getApplicationContext(), MatchActivityPre.class);
+        final Intent option2 = new Intent(getApplicationContext(), ExportActivity.class);
 
         final int sel1Id = 10011;
         final int sel2Id = 10013;
         RadioButton initSel1 = findViewById(R.id.initSel1);
         initSel1.setId(sel1Id);
-        RadioButton initSel3 = findViewById(R.id.initSel3);
-        initSel3.setId(sel2Id);
+        RadioButton initSel2 = findViewById(R.id.initSel2);
+        initSel2.setId(sel2Id);
 
         Button firstExec = findViewById(R.id.initExecButton);
         firstExec.setOnClickListener(new View.OnClickListener()
@@ -51,8 +52,8 @@ public class MainActivity extends AppCompatActivity
                     else if(radioSelect == sel2Id)
                     {
                         Log.d("Unimplemented","Download Data to PC Selected");
+                        startActivity(option2);
                     }
-
                 }
             }
         });

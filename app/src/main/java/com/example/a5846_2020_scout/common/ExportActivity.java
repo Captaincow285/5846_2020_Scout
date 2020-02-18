@@ -2,6 +2,7 @@ package com.example.a5846_2020_scout.common;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -49,7 +50,8 @@ public class ExportActivity extends AppCompatActivity
             public void onClick(View v) {
                 cancel.setVisibility(View.GONE);
                 submit.setVisibility(View.GONE);
-                String fileName = "Export" + "_" + DateFormat.getDateInstance().toString() + ".db";
+                String fileName = "Export" + "_" + (DateFormat.getDateInstance().toString()) + ".db";
+                Log.d("debug", fileName);
 
                 updateNews.setText(updates[0]);
                 progress.setProgress(1);
@@ -76,15 +78,6 @@ public class ExportActivity extends AppCompatActivity
                 catch (IOException e)
                 {
                     e.printStackTrace();
-                }
-                finally
-                {
-                    try {
-                        sourceChannel.close();
-                        destChannel.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
                 }
 
                 updateNews.setText(updates[3]);
