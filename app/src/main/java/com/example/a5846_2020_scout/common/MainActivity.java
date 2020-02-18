@@ -22,15 +22,11 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         final Intent option1 = new Intent(getApplicationContext(), MatchActivityPre.class);
-        final Intent option2 = new Intent(getApplicationContext(), SetCompActivity.class);
 
         int sel1Id = 10011;
-        int sel2Id = 10012;
         int sel3Id = 10013;
         RadioButton initSel1 = findViewById(R.id.initSel1);
         initSel1.setId(sel1Id);
-        RadioButton initSel2 = findViewById(R.id.initSel2);
-        initSel2.setId(sel2Id);
         RadioButton initSel3 = findViewById(R.id.initSel3);
         initSel3.setId(sel3Id);
 

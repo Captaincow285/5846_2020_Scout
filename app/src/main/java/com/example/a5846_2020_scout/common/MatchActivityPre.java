@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -24,6 +26,7 @@ import org.parceler.Parcels;
 import com.example.a5846_2020_scout.roomDatabase.Match;
 
 public class MatchActivityPre extends AppCompatActivity {
+    private String comp;
 
     protected void onCreate(Bundle savedInstanceStat) {
         super.onCreate(savedInstanceStat);
@@ -46,6 +49,28 @@ public class MatchActivityPre extends AppCompatActivity {
         final TextView teamNumBox = findViewById(R.id.teamNumBox);
         final EditText teamNumInput = findViewById(R.id.teamNumberInput);
         final ConfirmationDialog nextTask = new ConfirmationDialog();
+
+        final int compIDSEM = 99800;
+        final int compIDWPI = 99801;
+        final int compIDDCMP = 99802;
+        final int compIDWorld = 99803;
+        final int compIDBattle = 99804;
+        final int compIDBean = 99805;
+
+        RadioButton sem = findViewById(R.id.compSEM);
+        RadioButton wpi = findViewById(R.id.compWPI);
+        RadioButton dcmp = findViewById(R.id.compNEDCMP);
+        RadioButton world = findViewById(R.id.compWorlds);
+        RadioButton battlecry = findViewById(R.id.compBattle);
+        RadioButton beanBlitz = findViewById(R.id.compBean);
+        final RadioGroup compSelect = findViewById(R.id.compSelectList);
+
+        sem.setId(compIDSEM);
+        wpi.setId(compIDWPI);
+        dcmp.setId(compIDDCMP);
+        world.setId(compIDWorld);
+        battlecry.setId(compIDBattle);
+        beanBlitz.setId(compIDBean);
 
         final Toast noGo = Toast.makeText(getApplicationContext(), "Fields not filled.", Toast.LENGTH_LONG);
 
@@ -106,13 +131,38 @@ public class MatchActivityPre extends AppCompatActivity {
 
                     if(scoutInitFilled && matchNumFilled && teamNumFilled)
                     {
-                        //String comp = compSet.getSelectedItem().toString();
+                        int x = compSelect.getCheckedRadioButtonId();
+                        if(x == compIDSEM)
+                        {
+                            comp = "SE Mass";
+                        }
+                        else if(x == compIDWPI)
+                        {
+                            comp = "WPI";
+                        }
+                        else if(x == compIDDCMP)
+                        {
+                            comp = "NEDCMP";
+                        }
+                        else if(x == compIDWorld)
+                        {
+                            comp = "Worlds";
+                        }
+                        else if(x == compIDBattle)
+                        {
+                            comp = "Battlecry";
+                        }
+                        else if(x == compIDBean)
+                        {
+                            comp = "Beantown Blitz";
+                        }
+
                         String scoutInit = initialsInput.getText().toString();
                         int matchNumber = Integer.parseInt(matchNumInput.getText().toString());
                         int teamNum = Integer.parseInt(teamNumInput.getText().toString());
 
                         Match recording = new Match();
-                        //recording.setCompetition(comp);
+                        recording.setCompetition(comp);
                         recording.setMatchNum(matchNumber);
                         recording.setTeamNumber(teamNum);
                         recording.setScoutInit(scoutInit);

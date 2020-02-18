@@ -45,27 +45,11 @@
                     android:textSize="36sp" />
 
                 <RadioButton
-                    android:id="@+id/initSel2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:text="@string/initSel2_text"
-                    android:textSize="24sp" />
-
-                <RadioButton
                     android:id="@+id/initSel3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="0dp"
                     android:text="@string/initSel3_text"
-                    android:textSize="24sp" />
-
-                <RadioButton
-                    android:id="@+id/initSel4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:text="@string/initSel4_text"
                     android:textSize="24sp" />
 
             </RadioGroup>
