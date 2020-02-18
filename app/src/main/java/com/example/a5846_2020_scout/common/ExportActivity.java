@@ -87,7 +87,13 @@ public class ExportActivity extends AppCompatActivity
                     }
                 }
 
+                updateNews.setText(updates[3]);
+                progress.setProgress(4);
+                original.delete();
 
+                updateNews.setText(updates[4]);
+                progress.setProgress(5);
+                startActivity(returnMain);
             }
         });
     }
