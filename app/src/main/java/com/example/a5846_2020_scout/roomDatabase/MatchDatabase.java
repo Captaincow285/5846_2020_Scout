@@ -6,5 +6,7 @@ import androidx.room.RoomDatabase;
 @Database(version = 1, entities = Match.class)
 public abstract class MatchDatabase extends RoomDatabase
 {
+    static final String DATABASE_NAME = "MatchDatabase";
+
     abstract public MatchDAO getMatchDAO();
 }
