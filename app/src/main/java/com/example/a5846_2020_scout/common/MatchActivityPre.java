@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,7 +36,6 @@ public class MatchActivityPre extends AppCompatActivity {
         final Switch pracToggle = findViewById(R.id.pracToggle);
         Button preScoutSubmit = findViewById(R.id.prematchSubmitButton);
         Button returnButton = findViewById(R.id.returnButton);
-        //Button confirmationSubmit = findViewById(R.id)
 
         final TextView matchNumBox = findViewById(R.id.matchNumBox);
         final EditText matchNumInput = findViewById(R.id.matchNumberInput);
@@ -73,13 +70,6 @@ public class MatchActivityPre extends AppCompatActivity {
         beanBlitz.setId(compIDBean);
 
         final Toast noGo = Toast.makeText(getApplicationContext(), "Fields not filled.", Toast.LENGTH_LONG);
-
-        /*
-        String[] competitions = {"SEMass", "WPI", "NEDCMP", "Worlds", "Battlecry", "Beantown Blitz"};
-        final Spinner compSet = findViewById(R.id.comp_list);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.activity_match_pre, R.id.competitionBox, competitions);
-        compSet.setAdapter(adapter);
-         */
 
         pracModeText.setVisibility(View.GONE);
         pracModeText2.setVisibility(View.GONE);

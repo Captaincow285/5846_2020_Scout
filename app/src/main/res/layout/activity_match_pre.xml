@@ -144,54 +144,54 @@
 
             <RadioGroup
                 android:id="@+id/compSelectList"
-                android:layout_width="324dp"
-                android:layout_height="193dp"
-                android:layout_marginTop="120dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/scoutInitialsBox">
+                app:layout_constraintTop_toBottomOf="@+id/initialsInput">
 
                 <RadioButton
                     android:id="@+id/compSEM"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/south_east_mass"
-                    android:textSize="24sp" />
+                    android:textSize="30sp" />
 
                 <RadioButton
                     android:id="@+id/compWPI"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/compitition_at_wpi"
-                    android:textSize="24sp" />
+                    android:textSize="30sp" />
 
                 <RadioButton
                     android:id="@+id/compNEDCMP"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/ne_districs"
-                    android:textSize="24sp" />
+                    android:text="@string/ne_districts"
+                    android:textSize="30sp" />
 
                 <RadioButton
                     android:id="@+id/compWorlds"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/worlds"
-                    android:textSize="24sp" />
+                    android:textSize="30sp" />
 
                 <RadioButton
                     android:id="@+id/compBattle"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/battle"
-                    android:textSize="24sp" />
+                    android:textSize="30sp" />
 
                 <RadioButton
                     android:id="@+id/compBean"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/bean"
-                    android:textSize="24sp" />
+                    android:textSize="30sp" />
             </RadioGroup>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

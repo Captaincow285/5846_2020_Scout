@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity
 
         final Intent option1 = new Intent(getApplicationContext(), MatchActivityPre.class);
 
-        int sel1Id = 10011;
-        int sel3Id = 10013;
+        final int sel1Id = 10011;
+        final int sel2Id = 10013;
         RadioButton initSel1 = findViewById(R.id.initSel1);
         initSel1.setId(sel1Id);
         RadioButton initSel3 = findViewById(R.id.initSel3);
-        initSel3.setId(sel3Id);
+        initSel3.setId(sel2Id);
 
         Button firstExec = findViewById(R.id.initExecButton);
         firstExec.setOnClickListener(new View.OnClickListener()
@@ -41,23 +41,18 @@ public class MainActivity extends AppCompatActivity
                 if(!(radioSelect == -1))
                 {
                     Log.d("Working", "Filled RadioButton");
-                    if(radioSelect == 10011)
+                    if(radioSelect == sel1Id)
                     {
                         String comp = Parcels.unwrap(getIntent().getParcelableExtra("compSet"));
                         option1.putExtra("compSet", Parcels.wrap(comp));
                         option1.putExtra("compName", getIntent().getParcelableExtra("compName"));
                         startActivity(option1);
                     }
-                    /*
-                    else if(radioSelect == 10012)
-                    {
-                        startActivity(option2);
-                    }
-                     */
-                    else if(radioSelect == 10013)
+                    else if(radioSelect == sel2Id)
                     {
                         Log.d("Unimplemented","Download Data to PC Selected");
                     }
+
                 }
             }
         });

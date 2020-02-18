@@ -52,7 +52,8 @@
     <string name="bean">BeanTown</string>
     <string name="battle">Battlecry</string>
     <string name="worlds">Worlds</string>
-    <string name="ne_districs">NE Districs</string>
+    <string name="ne_districts">NE Districts</string>
     <string name="compitition_at_wpi">Compitition at WPI</string>
     <string name="south_east_mass">South East MASS</string>
+    <string name="analyze_data">Analyze Data</string>
 </resources>
