@@ -50,7 +50,7 @@ public class ExportActivity extends AppCompatActivity
             public void onClick(View v) {
                 cancel.setVisibility(View.GONE);
                 submit.setVisibility(View.GONE);
-                String fileName = "Export" + "_" + (DateFormat.getDateInstance().toString()) + ".db";
+                String fileName = "Export_" + "test" + ".db";
                 Log.d("debug", fileName);
 
                 updateNews.setText(updates[0]);
@@ -72,7 +72,7 @@ public class ExportActivity extends AppCompatActivity
                 FileChannel destChannel = null;
                 try {
                     sourceChannel = new FileInputStream(original).getChannel();
-                    destChannel = new FileOutputStream(duplicate).getChannel();
+                    destChannel = new FileOutputStream(duplicate, false).getChannel();
                     destChannel.transferFrom(sourceChannel, 0, sourceChannel.size());
                 }
                 catch (IOException e)
