@@ -1,3 +1,7 @@
 you can continue without selecting a competition
 all text boxes are edit texts
 climed and parked can both be selected and you can continue
+you can add power cells even if the initiation line was not crossed
+can set sitch setings even when the team did not climb
+scouts initals feild can have numbers
+If a number is typed into a field the system will still take the inut from the number selectd by the buttons
