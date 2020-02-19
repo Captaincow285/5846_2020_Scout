@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         final Intent option1 = new Intent(getApplicationContext(), MatchActivityPre.class);
         final Intent option2 = new Intent(getApplicationContext(), ExportActivity.class);
 

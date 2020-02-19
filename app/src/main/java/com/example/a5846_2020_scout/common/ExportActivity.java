@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
 import com.example.a5846_2020_scout.R;
 import com.example.a5846_2020_scout.roomDatabase.MatchDatabase;
@@ -64,6 +65,7 @@ public class ExportActivity extends AppCompatActivity
 
                 updateNews.setText(updates[1]);
                 progress.setProgress(2);
+                Room.databaseBuilder(getApplicationContext(), MatchDatabase.class, "MatchDatabase").allowMainThreadQueries().build();
                 File original = new File(getDatabasePath("MatchDatabase").getAbsolutePath());
 
                 updateNews.setText(updates[2]);
