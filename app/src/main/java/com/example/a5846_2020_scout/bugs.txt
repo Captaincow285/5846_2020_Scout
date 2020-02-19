@@ -1,0 +1,3 @@
+you can continue without selecting a competition
+all text boxes are edit texts
+climed and parked can both be selected and you can continue
