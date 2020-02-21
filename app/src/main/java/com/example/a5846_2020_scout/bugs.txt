@@ -5,3 +5,6 @@ you can add power cells even if the initiation line was not crossed
 can set sitch setings even when the team did not climb
 scouts initals feild can have numbers
 If a number is typed into a field the system will still take the inut from the number selectd by the buttons
+can set switch as level and or show a robots position on the switch even if the robot has parked
+Analyze data button does nothing rn not sure if thats intentional
+control pannel can be activated without any cells scored
