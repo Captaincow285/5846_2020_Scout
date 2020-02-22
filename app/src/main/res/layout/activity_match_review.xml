@@ -313,7 +313,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@+id/endSwitch" />
 
             <Switch
                 android:id="@+id/balancedSwitch"
@@ -327,7 +327,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/parkSwitch" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/endSwitch"
                 android:layout_width="255dp"
                 android:layout_height="156dp"
                 app:layout_constraintEnd_toEndOf="parent"

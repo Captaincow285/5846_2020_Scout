@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,29 +37,8 @@ public class MatchActivityEnd extends AppCompatActivity
         final SeekBar robotHangPosition = findViewById(R.id.robotHangPosition);
         Button submitButton = findViewById(R.id.SubmitButton);
 
-        /*
-        climbSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(parkSwitch.isChecked())
-                {
-                    parkSwitch.setChecked(false);
-                    climbSwitch.setChecked(true);
-                }
-            }
-        });
+        final Toast noGo = Toast.makeText(getApplicationContext(), "Cannot Climb and Park at same time.", Toast.LENGTH_LONG);
 
-        parkSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(climbSwitch.isChecked())
-                {
-                    climbSwitch.setChecked(false);
-                    parkSwitch.setChecked(true);
-                }
-            }
-        });
-         */
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,18 +49,37 @@ public class MatchActivityEnd extends AppCompatActivity
                     PracticeMatch practice = Parcels.unwrap(getIntent().getParcelableExtra("Practice Object"));
                     practice.setEndClimb(climbSwitch.isChecked());
                     practice.setEndPark(parkSwitch.isChecked());
-                    practice.setHangPosition(position);
+                    if(climbSwitch.isChecked()) {
+                        practice.setHangPosition(position);
+                    }
+                    else
+                    {
+                        practice.setHangPosition(-1);
+                    }
                     pracReview.putExtra("Practice Object", Parcels.wrap(practice));
                     startActivity(pracReview);
                 }
                 else
                 {
-                    Match recording = Parcels.unwrap(getIntent().getParcelableExtra("MatchFromTele"));
-                    recording.setEndClimb(climbSwitch.isChecked());
-                    recording.setEndPark(parkSwitch.isChecked());
-                    recording.setHangPosition(position);
-                    review.putExtra("MatchFromEnd", Parcels.wrap(recording));
-                    startActivity(review);
+                    boolean singleSelect = climbSwitch.isChecked() ^ parkSwitch.isChecked();
+                    if(singleSelect) {
+                        Match recording = Parcels.unwrap(getIntent().getParcelableExtra("MatchFromTele"));
+                        recording.setEndClimb(climbSwitch.isChecked());
+                        recording.setEndPark(parkSwitch.isChecked());
+                        if(climbSwitch.isChecked()) {
+                            recording.setHangPosition(position);
+                        }
+                        else
+                        {
+                            recording.setHangPosition(-1);
+                        }
+                        review.putExtra("MatchFromEnd", Parcels.wrap(recording));
+                        startActivity(review);
+                    }
+                    else
+                    {
+                        noGo.show();
+                    }
                 }
             }
         });
