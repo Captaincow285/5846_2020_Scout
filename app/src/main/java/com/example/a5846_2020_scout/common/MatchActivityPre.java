@@ -45,7 +45,6 @@ public class MatchActivityPre extends AppCompatActivity {
         final TextView pracModeText2 = findViewById(R.id.pracModeText2);
         final TextView teamNumBox = findViewById(R.id.teamNumBox);
         final EditText teamNumInput = findViewById(R.id.teamNumberInput);
-        final ConfirmationDialog nextTask = new ConfirmationDialog();
 
         final int compIDSEM = 99800;
         final int compIDWPI = 99801;
@@ -88,6 +87,7 @@ public class MatchActivityPre extends AppCompatActivity {
                     teamNumInput.setVisibility(View.GONE);
                     pracModeText.setVisibility(View.VISIBLE);
                     pracModeText2.setVisibility(View.VISIBLE);
+                    compSelect.setVisibility(View.GONE);
                 }
                 else
                 {
@@ -99,6 +99,7 @@ public class MatchActivityPre extends AppCompatActivity {
                     teamNumInput.setVisibility(View.VISIBLE);
                     pracModeText.setVisibility(View.GONE);
                     pracModeText2.setVisibility(View.GONE);
+                    compSelect.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -118,8 +119,17 @@ public class MatchActivityPre extends AppCompatActivity {
                     boolean matchNumFilled = !matchNumInput.getText().toString().isEmpty();
                     boolean scoutInitFilled = !initialsInput.getText().toString().isEmpty();
                     boolean teamNumFilled = !teamNumInput.getText().toString().isEmpty();
+                    boolean compSelected;
+                    if(compSelect.getCheckedRadioButtonId() == -1)
+                    {
+                        compSelected = false;
+                    }
+                    else
+                    {
+                        compSelected = true;
+                    }
 
-                    if(scoutInitFilled && matchNumFilled && teamNumFilled)
+                    if(scoutInitFilled && matchNumFilled && teamNumFilled && compSelected)
                     {
                         int x = compSelect.getCheckedRadioButtonId();
                         if(x == compIDSEM)

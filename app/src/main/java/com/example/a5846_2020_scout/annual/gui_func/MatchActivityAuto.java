@@ -51,8 +51,10 @@ public class MatchActivityAuto extends AppCompatActivity
         highInPlusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                highIn++;
-                highInNumber.setText(Integer.toString(highIn));
+                if(sectCross.isChecked()) {
+                    highIn++;
+                    highInNumber.setText(Integer.toString(highIn));
+                }
             }
         });
 
@@ -70,8 +72,10 @@ public class MatchActivityAuto extends AppCompatActivity
         highOutPlusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                highOut ++;
-                highOutNumber.setText(Integer.toString(highOut));
+                if(sectCross.isChecked()) {
+                    highOut++;
+                    highOutNumber.setText(Integer.toString(highOut));
+                }
             }
         });
 
@@ -89,8 +93,10 @@ public class MatchActivityAuto extends AppCompatActivity
         lowPlusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                low++;
-                lowNumber.setText(Integer.toString(low));
+                if(sectCross.isChecked()) {
+                    low++;
+                    lowNumber.setText(Integer.toString(low));
+                }
             }
         });
 
